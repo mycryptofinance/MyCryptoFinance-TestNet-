@@ -9,7 +9,7 @@ const CONTRACT_CONFIG = {
         staking: "0x825FC04C154053d9F1f697cd9522019224343fC9",
         explorerUrl: "https://sepolia.etherscan.io"
     },
-    // Nexus Testnet (Chain ID: 392)
+    // Nexus Testnet (Chain ID: 3945)
     392: {
         networkName: "Nexus Testnet",
         nativeTicker: "NEX",
@@ -374,11 +374,11 @@ const addNexusNetwork = async () => {
         await window.ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [{
-                chainId: '0x188', // 392 in Hex
+                chainId: '0xF69', // 3945 in Hex
                 chainName: 'Nexus Testnet',
                 nativeCurrency: { name: 'Nexus', symbol: 'NEX', decimals: 18 },
-                rpcUrls: ['https://rpc.nexus.xyz'], // Уточните RPC Nexus
-                blockExplorerUrls: ['https://explorer.nexus.xyz'],
+                rpcUrls: ['https://testnet.rpc.nexus.xyz'], // Уточните RPC Nexus
+                blockExplorerUrls: ['https://nexus.testnet.blockscout.com'],
             }],
         });
         return true;
