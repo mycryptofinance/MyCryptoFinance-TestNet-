@@ -421,14 +421,45 @@ const addArcNetwork = async () => {
 
 async function switchNetwork(chainId) {
     if (chainId === 97) await addBNBTestnet();
-    if (chainId === 3945) await addNexusNetwork();
+    if (chainId === 3945) await addNexusNetwork(); //
+    if (chainId === 5042002) await addArcNetwork(); //
+    
     try { 
         await window.ethereum.request({ 
             method: 'wallet_switchEthereumChain', 
             params: [{ chainId: ethers.utils.hexValue(parseInt(chainId)) }] 
         });
-    } catch(e) { openModal('error', "Switch failed"); }
+    } catch(e) { 
+        if(e.code !== 4902) {
+             openModal('error', "Switch failed"); 
+        }
+    }
+                }
+
+function switchNetworkByValue(chainId, name) {
+    const btn = document.getElementById('networkBtn');
+    if(btn) btn.innerText = name;
+    
+    // Закрываем меню после выбора
+    const dropdown = document.getElementById('networkDropdown');
+    if(dropdown) dropdown.classList.remove('show');
+    
+    switchNetwork(chainId);
 }
+
+// Обработчик кнопки меню
+document.getElementById('networkBtn').addEventListener('click', (e) => {
+    e.stopPropagation(); // Чтобы клик не всплывал
+    document.getElementById('networkDropdown').classList.toggle('show');
+});
+
+// Закрытие при клике в любое другое место
+window.addEventListener('click', () => {
+    const dropdown = document.getElementById('networkDropdown');
+    if(dropdown && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+    }
+});
 
 document.getElementById('mintAmountEth').addEventListener('input', (e) => {
     const val = e.target.value;
