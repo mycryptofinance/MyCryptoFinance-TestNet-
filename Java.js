@@ -19,9 +19,9 @@ const CONTRACT_CONFIG = {
     5042002: {
         networkName: "Arc Testnet",
         nativeTicker: "USDC",
-        mcf: "0x...", 
-        nft: "0x...", 
-        staking: "0x...", 
+        mcf: "0xb66008C221CE3699c7F50AebB07898695845e95f", 
+        nft: "0xda2384357a072818a7c1BC4Bbd79Edf22065c95A", 
+        staking: "0x825FC04C154053d9F1f697cd9522019224343fC9", 
         explorerUrl: "https://testnet.arcscan.app"
     },
     97: {
