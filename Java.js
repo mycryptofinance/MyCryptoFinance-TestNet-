@@ -481,21 +481,21 @@ const addBNBTestnet = async () => {
     }
 };
 
-// const addArcNetwork = async () => {
-//     try {
-//         await window.ethereum.request({
-//             method: 'wallet_addEthereumChain',
-//             params: [{
-//                 chainId: '0x4CEE52',
-//                 chainName: 'Arc Testnet',
-//                 nativeCurrency: { name: 'USDC', symbol: 'USDC', decimals: 18 },
-//                 rpcUrls: ['https://rpc.testnet.arc.network'],
-//                 blockExplorerUrls: ['https://testnet.arcscan.app'],
-//             }],
-//         });
-//         return true;
-//     } catch (e) { return false; }
-// };
+const addArcNetwork = async () => {
+    try {
+        await window.ethereum.request({
+            method: 'wallet_addEthereumChain',
+            params: [{
+                chainId: '0x4CEE52',
+                chainName: 'Arc Testnet',
+                nativeCurrency: { name: 'USDC', symbol: 'USDC', decimals: 18 },
+                rpcUrls: ['https://rpc.testnet.arc.network'],
+                blockExplorerUrls: ['https://testnet.arcscan.app'],
+            }],
+        });
+        return true;
+    } catch (e) { return false; }
+};
 
 
 // async function switchNetwork(chainId) {
