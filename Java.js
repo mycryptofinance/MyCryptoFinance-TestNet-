@@ -6,7 +6,7 @@ const CONTRACT_CONFIG = {
         nativeTicker: "USDC",
         mcf: "0xe33A789a973F7ed878e72D03F8a505e794D9D468", 
         nft: "0x439CEcb4C22D595b15c7FD37de3E975AC1534cc8", 
-        staking: "0xA7c8e23e9aed4b3057D884aa925C26904BF82795", 
+        staking: "0xeAf231d5a4E7E19B10125878E1790e7cF9b580fc", 
         explorerUrl: "https://testnet.arcscan.app"
     },
 
@@ -39,10 +39,10 @@ const STAKING_ABI = ["function stake(uint256 amount, uint8 tier)", "function uns
 
 
 const STAKING_PLANS = [
-    { id: 0, days: 0, apy: 5, label: "FLEXIBLE" },
-    { id: 1, days: 7, apy: 10, label: "7 DAYS" },
-    { id: 2, days: 30, apy: 15, label: "30 DAYS" },
-    { id: 3, days: 90, apy: 25, label: "90 DAYS" }
+    { id: 0, days: 0, apy: 10.5, label: "FLEXIBLE" },
+    { id: 1, days: 7, apy: 15, label: "7 DAYS" },
+    { id: 2, days: 30, apy: 18, label: "30 DAYS" },
+    { id: 3, days: 90, apy: 22.5, label: "90 DAYS" }
 ];
 
 const nftImages = [
@@ -601,7 +601,8 @@ function openModal(type, title, txHash = null, details = null) {
                     ${detailsHtml}
                     <div style="margin-top: 10px; font-size: 0.8rem;">
                         <span style="color: #888;">TX Hash: </span>
-                        <a href="${explorerUrl}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">${shortHash} ↗</a>
+                        <a href="${explorerUrl}" target="_blank" style="color: var(--primary); 
+                        text-decoration: none; font-weight: bold;">${shortHash} ↗</a>
                     </div>`;
                 return; 
             }
@@ -612,7 +613,8 @@ function openModal(type, title, txHash = null, details = null) {
             break;
     }
     document.getElementById('modalIcon').innerHTML = iconHtml;
-    document.getElementById('modalDesc').innerHTML = `<h3 style="margin: 0; color: ${type==='success'?'var(--primary)':'var(--error)'};">${title}</h3>`;
+    document.getElementById('modalDesc').innerHTML = `<h3 style="margin: 0; 
+    color: ${type==='success'?'var(--primary)':'var(--error)'};">${title}</h3>`;
     if (type === 'error') document.getElementById('modalDesc').innerText = title;
 }
 
@@ -633,6 +635,9 @@ function switchNetworkByValue(chainId, chainName) {
     document.getElementById('networkDropdown').classList.remove('show');
 }
 
+
+
+
 const canvas = document.getElementById('snowCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -649,16 +654,16 @@ resize();
 
 // Создание снежинки
 function createSnowflakes() {
-    const count = 250; // Количество снежинок
+    const count = 150; // Количество снежинок
     snowflakes = [];
     for (let i = 0; i < count; i++) {
         snowflakes.push({
             x: Math.random() * width,
             y: Math.random() * height,
             opacity: Math.random(),
-            speedX: Math.random() * 1 - 0.3,
+            speedX: Math.random() * 1 - 0.5,
             speedY: Math.random() * 1 + 1,
-            radius: Math.random() * 2 + 1
+            radius: Math.random() * 3 + 1
         });
     }
 }
