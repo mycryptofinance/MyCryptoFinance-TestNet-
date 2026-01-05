@@ -13,8 +13,15 @@
 </head>
 <body>
 
+    <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <linearGradient id="cryptoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0ecce6" /> <stop offset="100%" style="stop-color:#0288D1" /> </linearGradient>
+        </defs>
+      </svg>
+
     <header>
-       <div class="brand">
+        <div class="brand">
             <div class="logo-icon" style="position: relative;">
                 <span class="santa-hat">🎅</span>
                 
@@ -50,16 +57,18 @@
                 <div id="networkDropdown" class="network-dropdown-content">
                     <button onclick="switchNetworkByValue(5042002, 'Arc Testnet')">Arc Testnet</button>
                     <button onclick="switchNetworkByValue(11155111, 'Sepolia')">Sepolia</button>
+                    <button onclick="switchNetworkByValue(97, 'BNB Testnet')">BNB Testnet</button>
                     <button onclick="switchNetworkByValue(3945, 'Nexus Testnet')">Nexus Testnet</button> 
-                    <button onclick="switchNetworkByValue(97, 'BNB Testnet')">BNB Testnet</button> 
+                    
                     <!-- <button onclick="switchNetworkByValue(56, 'BNB Mainnet')">BNB Mainnet</button>
                     <button onclick="switchNetworkByValue(1, 'ETH Mainnet')">ETH Mainnet</button> 
                     <button onclick="switchNetworkByValue(8453, 'Base')">Base</button> -->
 
                 </div>
+                
             </div>
     
-              <button id="connectBtn" class="btn-connect">
+            <button id="connectBtn" class="btn-connect">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" 
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" 
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -173,15 +182,26 @@
 
     <footer>
         <div class="footer-socials">
+        
             <button class="social-btn" onclick="addTokenToWallet()">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" style="width:20px;"> Add to MetaMask
             </button>
+
             <a href="https://x.com/MyCryptoFinance" class="social-btn" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
             <a href="https://t.me/MyCryproFinance" class="social-btn" target="_blank"><i class="fab fa-telegram-plane"></i> Telegram</a>
-            <a href="https://sepolia.etherscan.io/address/0xb66008c221ce3699c7f50aebb07898695845e95f" class="social-btn" target="_blank"><i class="fas fa-search"></i> Etherscan</a>
+
+            <a href="https://sepolia.etherscan.io/address/0xb66008c221ce3699c7f50aebb07898695845e95f" 
+            class="social-btn" target="_blank"><i class="fas fa-search"></i> Etherscan</a>
+
+            <a href="https://testnet.arcscan.app/address/0xe33A789a973F7ed878e72D03F8a505e794D9D468?tab=contract" 
+            class="social-btn" target="_blank"><i class="fas fa-search"></i> ARCscan</a>
+
+            <a href="https://testnet.bscscan.com/token/0xb499cddddf296e247cccabab530cd21a8c36a0aa#code" 
+            class="social-btn" target="_blank"><i class="fas fa-search"></i> BNB Testnet</a>
+
         </div>
         <div class="footer-copy">
-            © 2025 MyCryptoFinance Ecosystem. All rights reserved.
+            © 2026 MyCryptoFinance Ecosystem. <br> All Contracts are Deployed on Test Networks!
         </div>
     </footer>
 
@@ -196,6 +216,6 @@
     </div>
 
     <canvas id="snowCanvas"></canvas>
-    <script src="Java.js"></script>
+    <script src="Js.js"></script>
 </body>
 </html>
