@@ -3,7 +3,7 @@
     --card-bg: #0d836f96; 
     --primary: #05da7d;
     --primary-dim: rgba(255, 255, 255, 0.15);
-    --accent-orange: #e92020;  
+    --accent-orange: #e92020; 
     --text-main: #f0fdf4;
     --text-muted: #459e66;
     --border: rgba(75, 216, 174, 0.3);
@@ -249,6 +249,7 @@ input {
 .btn-claim:disabled { border-color: #444; color: #555; background: transparent; cursor: not-allowed; }
 .btn-mint-nft[disabled] {cursor: default !important; }
 .btn-mint-nft {cursor: pointer;}
+
 
 .btn-close {
     display: inline-flex;
@@ -621,7 +622,7 @@ input {
     }
 
 .modal-content { 
-    background: #0d836f96; 
+    background: #0d836f96;
     border: 1px solid var(--primary); 
     padding: 30px;
     border-radius: 16px; 
@@ -645,7 +646,7 @@ input {
 footer { 
     border-top: 1px solid #333;
      padding: 40px 20px; 
-     background: rgba(2, 4, 2, 0.95); 
+     background: rgba(2, 4, 2, 0.568); 
      margin-top: auto; 
      display: flex; 
      flex-direction: column; 
@@ -663,7 +664,7 @@ footer {
     align-items: center; 
     gap: 10px; 
     padding: 12px 25px; 
-    background: rgba(0, 255, 136, 0.05); 
+    background: rgba(20, 22, 20, 0.37); 
     border: 1px solid var(--primary); 
     border-radius: 30px; 
     color: var(--primary); 
