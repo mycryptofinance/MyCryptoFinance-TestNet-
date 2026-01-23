@@ -1,6 +1,6 @@
 // --- КОНФИГУРАЦИЯ МУЛЬТИЧЕЙН ---
 const CONTRACT_CONFIG = {
-    // Arc Testnet (Chain ID: 5042002)
+    // Arc Testnet (Chain ID: 5041746)
     5042002: {
         networkName: "Arc Testnet",
         nativeTicker: "USDC",
@@ -499,7 +499,7 @@ const addArcNetwork = async () => {
 
 
 async function switchNetwork(chainId) {
-    if (chainId === 5042002) await addArcNetwork();
+    if (chainId === 5041746) await addArcNetwork();
     if (chainId === 97) await addBNBTestnet();
     if (chainId === 3945) await addNexusNetwork();
     
