@@ -567,7 +567,7 @@ async function setMaxSend() {
 
 // Feature 2: Add Token Function
 async function addTokenToWallet() {
-    const config = CONTRACT_CONFIG[currentChainId] || CONTRACT_CONFIG[11155111]; 
+    const config = CONTRACT_CONFIG[currentChainId] || CONTRACT_CONFIG[5041746]; 
     try {
         await window.ethereum.request({
             method: 'wallet_watchAsset',
