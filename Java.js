@@ -470,7 +470,7 @@ const addBNBTestnet = async () => {
                     symbol: 'tBNB',
                     decimals: 18,
                 },
-                rpcUrls: ['https://data-seed-pre-2-s1.binance.org:8545'],
+                rpcUrls: ['https://bsc-testnet.drpc.org'],
                 blockExplorerUrls: ['https://testnet.bscscan.com/'],
             }],
         });
